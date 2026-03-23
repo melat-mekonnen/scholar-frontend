@@ -1,30 +1,32 @@
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-
+import { Card, CardContent } from "@/components/ui/card"
+import { GraduationCap, Brain, ShieldCheck, ClipboardList, UserPlus, Search, Send, BarChart3 } from "lucide-react"
 export default function HomePage() {
   return (
     <main className="min-h-screen bg-background">
 
       {/* HERO SECTION */}
       <section className="relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-background to-secondary/10" />
+        {/* Background image */}
+        <div
+          className="absolute inset-0 bg-cover bg-center"
+          style={{ backgroundImage: "url('/hero1.png')" }}
+        />
+        {/* Overlay for readability */}
+       
 
-        <div className="relative mx-auto max-w-7xl px-6 py-28 text-center">
+        <div className="relative mx-auto flex min-h-[140vh] max-w-7xl flex-col px-6 pt-16 pb-10 text-center">
 
-          <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl">
+          <h1 className="text-4xl font-bold px-16 pt-10 pb-7 tracking-tight sm:text-5xl md:text-6xl text-grey-60">
             AI-Powered Scholarship Platform
-            <span className="block text-primary">
+            <span className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl text-grey-60">
               for Ethiopian Students
             </span>
           </h1>
 
-          <p className="mx-auto mt-6 max-w-2xl text-lg text-muted-foreground">
-            Discover verified scholarships from around the world. Our platform
-            uses intelligent recommendations to match Ethiopian students with
-            opportunities that fit their academic background and interests.
-          </p>
-
-          <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
+         
+          <div className="mt-auto flex flex-col items-center justify-center gap-4 pt-10 sm:flex-row">
             <Button asChild size="lg">
               <Link href="/signup">Get Started</Link>
             </Button>
@@ -42,21 +44,21 @@ export default function HomePage() {
         <div className="mx-auto grid max-w-6xl gap-8 px-6 py-12 text-center sm:grid-cols-2 lg:grid-cols-4">
 
           <div>
-            <p className="text-3xl font-bold text-primary">500+</p>
+            <p className="text-3xl font-bold text-primary">50+</p>
             <p className="text-sm text-muted-foreground">
               Scholarships Available
             </p>
           </div>
 
           <div>
-            <p className="text-3xl font-bold text-primary">10K+</p>
+            <p className="text-3xl font-bold text-primary">100+</p>
             <p className="text-sm text-muted-foreground">
               Students Supported
             </p>
           </div>
 
           <div>
-            <p className="text-3xl font-bold text-primary">30+</p>
+            <p className="text-3xl font-bold text-primary">12+</p>
             <p className="text-sm text-muted-foreground">
               Countries Covered
             </p>
@@ -73,56 +75,59 @@ export default function HomePage() {
       </section>
 
       {/* FEATURES */}
-      <section className="mx-auto max-w-7xl px-6 py-20">
-
-        <h2 className="text-center text-3xl font-bold">
-          Why Use Our Platform?
+       <section className="py-20 bg-background">
+      <div className="max-w-6xl mx-auto px-6">
+        <h2 className="text-3xl font-bold text-center mb-12 tracking-tight">
+          Why Choose Our Scholarship Platform
         </h2>
 
-        <div className="mt-12 grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
-
-          <div className="text-center">
-            <h3 className="text-lg font-semibold">
-              Centralized Database
-            </h3>
-            <p className="mt-2 text-sm text-muted-foreground">
-              Access hundreds of scholarships from one trusted platform instead
-              of searching multiple websites.
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          {/* Card 1 */}
+          <div className="flex flex-col items-center text-center border border-border rounded-2xl bg-card shadow-sm hover:shadow-md transition-shadow p-10">
+            <div className="bg-primary/10 text-primary p-4 rounded-full mb-6">
+              <GraduationCap className="w-8 h-8" />
+            </div>
+            <h3 className="text-xl font-semibold mb-3">All-in-One Platform</h3>
+            <p className="text-base text-muted-foreground leading-relaxed">
+              Access thousands of scholarships from one trusted hub instead of browsing multiple websites.
             </p>
           </div>
 
-          <div className="text-center">
-            <h3 className="text-lg font-semibold">
-              AI Recommendations
-            </h3>
-            <p className="mt-2 text-sm text-muted-foreground">
-              Get personalized scholarship suggestions based on your academic
-              profile, major, and interests.
+          {/* Card 2 */}
+          <div className="flex flex-col items-center text-center border border-border rounded-2xl bg-card shadow-sm hover:shadow-md transition-shadow p-10">
+            <div className="bg-primary/10 text-primary p-4 rounded-full mb-6">
+              <Brain className="w-8 h-8" />
+            </div>
+            <h3 className="text-xl font-semibold mb-3">AI Recommendations</h3>
+            <p className="text-base text-muted-foreground leading-relaxed">
+              Get scholarships tailored to your academic profile, field of study, and personal interests.
             </p>
           </div>
 
-          <div className="text-center">
-            <h3 className="text-lg font-semibold">
-              Verified Opportunities
-            </h3>
-            <p className="mt-2 text-sm text-muted-foreground">
-              All scholarships are reviewed and verified to remove outdated or
-              fake listings.
+          {/* Card 3 */}
+          <div className="flex flex-col items-center text-center border border-border rounded-2xl bg-card shadow-sm hover:shadow-md transition-shadow p-10">
+            <div className="bg-primary/10 text-primary p-4 rounded-full mb-6">
+              <ShieldCheck className="w-8 h-8" />
+            </div>
+            <h3 className="text-xl font-semibold mb-3">Verified Opportunities</h3>
+            <p className="text-base text-muted-foreground leading-relaxed">
+              Explore only authentic and verified scholarships — no outdated or fake listings.
             </p>
           </div>
 
-          <div className="text-center">
-            <h3 className="text-lg font-semibold">
-              Application Tracking
-            </h3>
-            <p className="mt-2 text-sm text-muted-foreground">
-              Track your scholarship applications and receive deadline
-              reminders.
+          {/* Card 4 */}
+          <div className="flex flex-col items-center text-center border border-border rounded-2xl bg-card shadow-sm hover:shadow-md transition-shadow p-10">
+            <div className="bg-primary/10 text-primary p-4 rounded-full mb-6">
+              <ClipboardList className="w-8 h-8" />
+            </div>
+            <h3 className="text-xl font-semibold mb-3">Application Tracking</h3>
+            <p className="text-base text-muted-foreground leading-relaxed">
+              Manage and track your applications in one place with smart deadline reminders.
             </p>
           </div>
-
         </div>
-      </section>
+      </div>
+    </section>
 
       {/* HOW IT WORKS */}
       <section className="bg-muted/30 py-20">
@@ -131,41 +136,70 @@ export default function HomePage() {
           <h2 className="text-center text-3xl font-bold">
             How It Works
           </h2>
+          <p className="mx-auto mt-3 max-w-2xl text-center text-sm text-muted-foreground">
+            A simple step-by-step flow from creating your profile to tracking applications.
+          </p>
 
-          <div className="mt-12 grid gap-10 text-center sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            <Card className="rounded-2xl shadow-sm hover:shadow-md transition-shadow">
+              <CardContent className="p-8 text-center space-y-4">
+                <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-primary/10 text-primary">
+                  <UserPlus className="h-6 w-6" />
+                </div>
+                <div className="mx-auto flex h-7 w-7 items-center justify-center rounded-full bg-primary text-primary-foreground text-xs font-bold">
+                  1
+                </div>
+                <h3 className="text-lg font-semibold">Create your profile</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  Register and add your academic details so we can personalize your experience.
+                </p>
+              </CardContent>
+            </Card>
 
-            <div>
-              <p className="text-xl font-bold text-primary">1</p>
-              <p className="mt-2 font-semibold">Create Profile</p>
-              <p className="text-sm text-muted-foreground">
-                Register and add your academic information.
-              </p>
-            </div>
+            <Card className="rounded-2xl shadow-sm hover:shadow-md transition-shadow">
+              <CardContent className="p-8 text-center space-y-4">
+                <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-primary/10 text-primary">
+                  <Search className="h-6 w-6" />
+                </div>
+                <div className="mx-auto flex h-7 w-7 items-center justify-center rounded-full bg-primary text-primary-foreground text-xs font-bold">
+                  2
+                </div>
+                <h3 className="text-lg font-semibold">Discover scholarships</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  Browse verified opportunities tailored to your field, degree level, and interests.
+                </p>
+              </CardContent>
+            </Card>
 
-            <div>
-              <p className="text-xl font-bold text-primary">2</p>
-              <p className="mt-2 font-semibold">Discover Scholarships</p>
-              <p className="text-sm text-muted-foreground">
-                Explore opportunities tailored to your profile.
-              </p>
-            </div>
+            <Card className="rounded-2xl shadow-sm hover:shadow-md transition-shadow">
+              <CardContent className="p-8 text-center space-y-4">
+                <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-primary/10 text-primary">
+                  <Send className="h-6 w-6" />
+                </div>
+                <div className="mx-auto flex h-7 w-7 items-center justify-center rounded-full bg-primary text-primary-foreground text-xs font-bold">
+                  3
+                </div>
+                <h3 className="text-lg font-semibold">Apply with confidence</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  Apply easily and keep everything organized in one place.
+                </p>
+              </CardContent>
+            </Card>
 
-            <div>
-              <p className="text-xl font-bold text-primary">3</p>
-              <p className="mt-2 font-semibold">Apply Easily</p>
-              <p className="text-sm text-muted-foreground">
-                Apply directly through the platform or via official links.
-              </p>
-            </div>
-
-            <div>
-              <p className="text-xl font-bold text-primary">4</p>
-              <p className="mt-2 font-semibold">Track Progress</p>
-              <p className="text-sm text-muted-foreground">
-                Monitor your applications and receive updates.
-              </p>
-            </div>
-
+            <Card className="rounded-2xl shadow-sm hover:shadow-md transition-shadow">
+              <CardContent className="p-8 text-center space-y-4">
+                <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-primary/10 text-primary">
+                  <BarChart3 className="h-6 w-6" />
+                </div>
+                <div className="mx-auto flex h-7 w-7 items-center justify-center rounded-full bg-primary text-primary-foreground text-xs font-bold">
+                  4
+                </div>
+                <h3 className="text-lg font-semibold">Track your progress</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  Monitor your applications and stay on top of deadlines and updates.
+                </p>
+              </CardContent>
+            </Card>
           </div>
 
         </div>
